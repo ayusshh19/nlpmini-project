@@ -24,7 +24,7 @@ function Formpage({handlesubmit,handlechange}) {
           name="userinput"
           onChange={(e)=>handlechange(e)}
         />
-        <button className="bg-slate-600 p-4 rounded-lg font-bold text-white" onClick={handlesubmit}>
+        <button className="bg-slate-600 p-4 rounded-lg font-bold text-white hover:bg-red-500 hover:scale-110 hover:transition-all" onClick={handlesubmit}>
           Generate Timestamp
         </button>
       </div>

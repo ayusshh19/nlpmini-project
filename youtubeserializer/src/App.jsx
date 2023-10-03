@@ -44,14 +44,19 @@ function App() {
     });
   };
   const handlesubmit = () => {
-    setstartplayer(!startplayer);
+    if(youtubelink.youtubelink==''||youtubelink.userinput==''){
+      alert("fill the link first")
+    }else{
+
+      setstartplayer(!startplayer);
+    }
   };
   return (
     <div className="bg-slate-900 w-full h-screen" ref={myRef}>
       <div className="text-4xl text-white font-bold p-3">Shayata</div>
       <div className="w-full h-[90%] flex justify-center items-center flex-col ">
         {startplayer ? (
-          <Videoplayer mainlink={youtubelink} />
+          <Videoplayer mainlink={youtubelink} setyoutubelink={setyoutubelink}/>
         ) : (
           <Formpage handlesubmit={handlesubmit} handlechange={handlechange} />
         )}
