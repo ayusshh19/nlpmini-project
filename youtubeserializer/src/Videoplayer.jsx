@@ -19,13 +19,15 @@ function Videoplayer({ mainlink, setyoutubelink }) {
   };
   
   useEffect(() => {
+    const api="https://nlpminiproject-21xm.onrender.com/data"
+    // const localapi="http://127.0.0.1:5000/data"
     const fetchData = async () => {
       try {
         const params = {
           youtubelink: mainlink.youtubelink,
           words: mainlink.userinput,
         };
-        const response = await axios.get("http://127.0.0.1:5000/data", {
+        const response = await axios.get(api, {
           params: { params: JSON.stringify(params) },
         });
         settimestamp(response.data.data);
